@@ -3,8 +3,8 @@ Plant Growth Modelling using age estimation (in days) and leaf counting
 
 # Multi View Vision Transformer (MVVT) for Plant Age and Leaf Count Estimation
 
-This repository implements a Vision Transformer (ViT) model for estimating the age (in days) and the number of leaves of a plant using multi-view image data. The model is trained using a dataset containing images of plants at different growth stages.
-
+This repository implements a Multi View Vision Transformer (MVVT) model for estimating the age (in days) and the number of leaves of a plant using multi-view image data. The model is trained using a dataset containing images of plants at different growth stages.
+A single model file has been created for both tasks: plant age estimation (model[1]) and leaf count prediction (model[0]), as both are trained on the same dataset.
 ## Features
 - Uses a **Vision Transformer (ViT)** for feature extraction and prediction.
 - Supports training with configurable hyperparameters.
@@ -36,14 +36,20 @@ where:
     ├── train/
     │   ├── p1/
     │   │   ├── d1/
-    │   │   │   ├── radish_p1_d1_L1_0.jpg
-    │   │   │   ├── radish_p1_d1_L1_15.jpg
-    │   │   │   ├── ...
-    │   │   │   ├── radish_p1_d1_L5_345.jpg
+    │   │   │   ├── L1/
+    │   │   │   │   ├── radish_p1_d1_L1_0.png
+    │   │   │   │   ├── radish_p1_d1_L1_15.png
+    │   │   │   │   ├── ...
+    │   │   │   │   ├── radish_p1_d1_L1_345.png
+    │   │   │   ├── L2/
+    │   │   │   ├── L3/
+    │   │   │   ├── L4/
+    │   │   │   ├── L5/
     │   │   ├── d2/
     │   │   ├── ...
     │   ├── p2/
     │   ├── ...
+
 ```
 Each plant has images captured at different time points (`d1`, `d2`, ...), categorized into five levels (`L1` to `L5`), with a total of 24 images per level taken from different angles.
 
@@ -66,21 +72,23 @@ python main.py
 Hyperparameters such as the number of epochs, batch size, and learning rate can be modified directly in `main.py`.
 
 ### 3. Model Architecture
-The Vision Transformer (ViT) extracts features from the images, flattens them, and passes them through a transformer encoder. The final representation is used to predict both leaf count and plant age.
+In the code, the Multi-View Vision Transformer (MVVT) is used for two task separetly:
+
+- **MVVT for Plant Age Estimation (model[1])
+- **MVVT for Leaf Count Prediction (model[0])
+
+Each model takes n_images views as input, processes them through attention mechanisms, and then combines the extracted features using a pooling layer. The final representation is used to predict both leaf count and plant age. Below is the model architecture:
+
 
 ### 4. Output Metrics
-- **Leaf Count RMSE**: Measures the error in predicting the number of leaves.
-- **Age RMSE**: Measures the error in predicting the plant’s age.
+- **Leaf Count RMSE**: Measures the root mean squared error in predicting the number of leaves.
+-  **Leaf Count MAE**: Measures the mean absolute error in predicting the number of leaves.
+- **Age RMSE**: Measures the root mean squared error  in predicting the plant’s age.
+- **Age MAE**: Measures the mean absolute error in predicting the plant’s age.
 
 ## Results
-During training, the loss function minimizes the combined RMSE loss for both leaf count and plant age. The model prints training losses per epoch.
+During training, the loss function minimizes the RMSE loss for both leaf count and plant age. The model prints training losses per epoch.
 
-## Future Improvements
-- Implement data augmentation for robustness.
-- Explore attention-based fusion of multi-view features.
-- Compare ViT with CNN-based baselines.
 
-## License
-This project is open-source under the MIT License.
 
 
