@@ -21,7 +21,6 @@ print(device)
 root_path='/home/shreya/Downloads/'
 crop='radish'
 csv_file='/home/shreya/Downloads/radish_train.csv'
-crop='okra'
 n_images=4
 epochs=10
 plant_input=4
@@ -350,11 +349,11 @@ def train_and_validate(train_loader, val_loader, num_epochs=10):
 
         print(f"Epoch {epoch+1}/{num_epochs} - Train MAE Leaf: {train_mae_leaf[-1]:.4f}, Train MAE Age: {train_mae_age[-1]:.4f}, R² Leaf: {train_r2_leaf[-1]:.4f}, R² Age: {train_r2_age[-1]:.4f}")
         print(f"Validation - MAE Leaf: {val_mae_leaf[-1]:.4f}, MAE Age: {val_mae_age[-1]:.4f}, R² Leaf: {val_r2_leaf[-1]:.4f}, R² Age: {val_r2_age[-1]:.4f}")
-        torch.save(model[0].state_dict(), f"okra_vit_leaf_count_{epoch+1}.pth")
-        torch.save(model[1].state_dict(), f"okra_vit_age_prediction_{epoch+1}.pth")
+        torch.save(model[0].state_dict(), f"radish_vit_leaf_count_{epoch+1}.pth")
+        torch.save(model[1].state_dict(), f"radish_vit_age_prediction_{epoch+1}.pth")
 
-    torch.save(model[0].state_dict(), "okra_vit_leaf_count.pth")
-    torch.save(model[1].state_dict(), "okra_vit_age_prediction.pth")
+    torch.save(model[0].state_dict(), "radish_vit_leaf_count.pth")
+    torch.save(model[1].state_dict(), "radish_vit_age_prediction.pth")
     print("Models saved successfully!")
 
     print("Train Losses Leaf:", train_losses_leaf)
