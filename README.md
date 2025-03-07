@@ -1,7 +1,7 @@
 # GroMo-Plant-Growth-Modeling-with-Multiview-Images
 Plant Growth Modelling using age estimation (in days) and leaf counting
 
-# Vision Transformer for Plant Age and Leaf Count Estimation
+# Multi View Vision Transformer (MVVT) for Plant Age and Leaf Count Estimation
 
 This repository implements a Vision Transformer (ViT) model for estimating the age (in days) and the number of leaves of a plant using multi-view image data. The model is trained using a dataset containing images of plants at different growth stages.
 
