@@ -89,6 +89,7 @@ Each model takes n_images views as input, processes them through attention mecha
 ## Results
 During training, the loss function minimizes the RMSE loss for both leaf count and plant age. The model prints training losses per epoch.
 
-
+## Dataset
+Dataset will be made available on request. Please email your request to mrig@iitrpr.ac.in
 
 
