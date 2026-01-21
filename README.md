@@ -92,4 +92,13 @@ During training, the loss function minimizes the RMSE loss for both leaf count a
 ## Dataset
 Dataset is available on https://data.annam.ai/gromo25/. For any queries, please contact to mrig@iitrpr.ac.in
 
+Crop-wise Dataset Links:-
+
+| Crop    | Training Dataset                                                                     | Test Dataset                                                                         |
+| ------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| Wheat   | [Download](https://drive.google.com/drive/folders/1grkWlTvp5uIE8vmyD8QX6TxwQPf2gyIN) | [Download](https://drive.google.com/drive/folders/1yM9TjQ97rRqgfnVkCo2mjG472pYtd2FS) |
+| Okra    | [Download](https://drive.google.com/drive/folders/1W6f_afUIu-L3vNUqCBV0Yp-jtnUNKhwn) | [Download](https://drive.google.com/drive/folders/1koScKN35ZRTJUr9j-Dv1ePeKaAzkaHIc) |
+| Radish  | [Download](https://drive.google.com/drive/folders/1ga1eL94zqBODmGmwiCkWTyH4psEuTPhQ) | [Download](https://drive.google.com/drive/folders/1eHEjqEB3XbUHz8PufbZ8TYYVOe6hfXZk) |
+| Mustard | [Download](https://drive.google.com/drive/folders/1HCNR6K5jbbFHu56u3BxI9Mvscs1dO_yS) | [Download](https://drive.google.com/drive/folders/1kOuudNggNv5FTEu8m0ALsF0qlbapEo_X) |
+
 
